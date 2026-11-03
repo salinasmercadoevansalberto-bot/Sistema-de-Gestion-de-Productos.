@@ -2,7 +2,7 @@ using Sistema_de_Gestion_de_Productos_;
 using System;
 using System.Windows.Forms;
 
-namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
+namespace Sistema_de_Gestion_de_Productos_
 {
     [System.ComponentModel.DesignerCategory("Form")]
     public partial class FrmCategorias : Form
@@ -19,6 +19,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
 
         private void btnRetroceder_Click(object sender, EventArgs e)
         {
+            Funcion_de_Regreso_Boton.Regreso(this);
         }
     }
 }

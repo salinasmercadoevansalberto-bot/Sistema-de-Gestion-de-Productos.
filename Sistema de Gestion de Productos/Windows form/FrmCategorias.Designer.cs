@@ -1,4 +1,4 @@
-namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
+namespace Sistema_de_Gestion_de_Productos_
 {
     partial class FrmCategorias
     {

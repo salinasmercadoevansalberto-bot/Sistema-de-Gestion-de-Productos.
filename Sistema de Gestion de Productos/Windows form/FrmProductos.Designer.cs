@@ -1,0 +1,387 @@
+namespace Sistema_de_Gestion_de_Productos_
+{
+    partial class FrmProductos
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        private void InitializeComponent()
+        {
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            txtCodigo = new TextBox();
+            txtNombre = new TextBox();
+            label4 = new Label();
+            label5 = new Label();
+            cmbCategoria = new ComboBox();
+            label6 = new Label();
+            label7 = new Label();
+            txtPrecioCosto = new TextBox();
+            txtPrecioVenta = new TextBox();
+            label8 = new Label();
+            txtExistencias = new TextBox();
+            btnGuardar = new Button();
+            btnModificar = new Button();
+            btnEliminar = new Button();
+            btnLimpiar = new Button();
+            label9 = new Label();
+            txtBuscar = new TextBox();
+            dgvProductos = new DataGridView();
+            Codigo = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Categoria = new DataGridViewTextBoxColumn();
+            PrecioCosto = new DataGridViewTextBoxColumn();
+            PrecioVenta = new DataGridViewTextBoxColumn();
+            Existencias = new DataGridViewTextBoxColumn();
+            btnRetroceder = new Button();
+            label10 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.Location = new Point(49, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(383, 35);
+            label1.TabIndex = 1;
+            label1.Text = "Administracion de Productos";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(49, 80);
+            label2.Name = "label2";
+            label2.Size = new Size(541, 26);
+            label2.TabIndex = 2;
+            label2.Text = "Registro y mantenimiento de productos del inventario";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ControlLightLight;
+            label3.Location = new Point(49, 139);
+            label3.Name = "label3";
+            label3.Size = new Size(215, 26);
+            label3.TabIndex = 3;
+            label3.Text = "Codigo del producto:";
+            // 
+            // txtCodigo
+            // 
+            txtCodigo.Location = new Point(49, 178);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(368, 27);
+            txtCodigo.TabIndex = 4;
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(49, 277);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(368, 27);
+            txtNombre.TabIndex = 6;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.ControlLightLight;
+            label4.Location = new Point(49, 238);
+            label4.Name = "label4";
+            label4.Size = new Size(225, 26);
+            label4.TabIndex = 5;
+            label4.Text = "Nombre del producto:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ControlLightLight;
+            label5.Location = new Point(49, 333);
+            label5.Name = "label5";
+            label5.Size = new Size(114, 26);
+            label5.TabIndex = 7;
+            label5.Text = "Categoria:";
+            // 
+            // cmbCategoria
+            // 
+            cmbCategoria.FormattingEnabled = true;
+            cmbCategoria.Location = new Point(49, 362);
+            cmbCategoria.Name = "cmbCategoria";
+            cmbCategoria.Size = new Size(368, 28);
+            cmbCategoria.TabIndex = 8;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.ControlLightLight;
+            label6.Location = new Point(49, 439);
+            label6.Name = "label6";
+            label6.Size = new Size(171, 26);
+            label6.TabIndex = 9;
+            label6.Text = "Precio de costo:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.ControlLightLight;
+            label7.Location = new Point(317, 439);
+            label7.Name = "label7";
+            label7.Size = new Size(172, 26);
+            label7.TabIndex = 10;
+            label7.Text = "Precio de venta:";
+            // 
+            // txtPrecioCosto
+            // 
+            txtPrecioCosto.Location = new Point(49, 498);
+            txtPrecioCosto.Name = "txtPrecioCosto";
+            txtPrecioCosto.Size = new Size(193, 27);
+            txtPrecioCosto.TabIndex = 11;
+            // 
+            // txtPrecioVenta
+            // 
+            txtPrecioVenta.Location = new Point(318, 498);
+            txtPrecioVenta.Name = "txtPrecioVenta";
+            txtPrecioVenta.Size = new Size(192, 27);
+            txtPrecioVenta.TabIndex = 12;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.ControlLightLight;
+            label8.Location = new Point(49, 567);
+            label8.Name = "label8";
+            label8.Size = new Size(131, 26);
+            label8.TabIndex = 13;
+            label8.Text = "Existencias:";
+            // 
+            // txtExistencias
+            // 
+            txtExistencias.Location = new Point(49, 614);
+            txtExistencias.Name = "txtExistencias";
+            txtExistencias.Size = new Size(281, 27);
+            txtExistencias.TabIndex = 14;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.BackColor = Color.RoyalBlue;
+            btnGuardar.ForeColor = SystemColors.ControlLightLight;
+            btnGuardar.Location = new Point(49, 670);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(131, 48);
+            btnGuardar.TabIndex = 15;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            // 
+            // btnModificar
+            // 
+            btnModificar.BackColor = Color.RoyalBlue;
+            btnModificar.ForeColor = SystemColors.ControlLightLight;
+            btnModificar.Location = new Point(199, 670);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(131, 48);
+            btnModificar.TabIndex = 16;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.RoyalBlue;
+            btnEliminar.ForeColor = SystemColors.ControlLightLight;
+            btnEliminar.Location = new Point(347, 670);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(131, 48);
+            btnEliminar.TabIndex = 17;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.RoyalBlue;
+            btnLimpiar.ForeColor = SystemColors.ControlLightLight;
+            btnLimpiar.Location = new Point(49, 740);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(131, 48);
+            btnLimpiar.TabIndex = 18;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.ControlLightLight;
+            label9.Location = new Point(49, 831);
+            label9.Name = "label9";
+            label9.Size = new Size(236, 26);
+            label9.TabIndex = 19;
+            label9.Text = "Productos Registrados";
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(49, 869);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(281, 27);
+            txtBuscar.TabIndex = 20;
+            // 
+            // dgvProductos
+            // 
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Codigo, Nombre, Categoria, PrecioCosto, PrecioVenta, Existencias });
+            dgvProductos.Location = new Point(49, 911);
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.RowHeadersWidth = 51;
+            dgvProductos.Size = new Size(797, 84);
+            dgvProductos.TabIndex = 21;
+            // 
+            // Codigo
+            // 
+            Codigo.HeaderText = "Codigo";
+            Codigo.MinimumWidth = 6;
+            Codigo.Name = "Codigo";
+            Codigo.Width = 125;
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.MinimumWidth = 6;
+            Nombre.Name = "Nombre";
+            Nombre.Width = 125;
+            // 
+            // Categoria
+            // 
+            Categoria.HeaderText = "Categoria";
+            Categoria.MinimumWidth = 6;
+            Categoria.Name = "Categoria";
+            Categoria.Width = 125;
+            // 
+            // PrecioCosto
+            // 
+            PrecioCosto.HeaderText = "Precio costo";
+            PrecioCosto.MinimumWidth = 6;
+            PrecioCosto.Name = "PrecioCosto";
+            PrecioCosto.Width = 125;
+            // 
+            // PrecioVenta
+            // 
+            PrecioVenta.HeaderText = "Precio Venta";
+            PrecioVenta.MinimumWidth = 6;
+            PrecioVenta.Name = "PrecioVenta";
+            PrecioVenta.Width = 125;
+            // 
+            // Existencias
+            // 
+            Existencias.HeaderText = "Existencias";
+            Existencias.MinimumWidth = 6;
+            Existencias.Name = "Existencias";
+            Existencias.Width = 125;
+            // 
+            // btnRetroceder
+            // 
+            btnRetroceder.Location = new Point(762, 22);
+            btnRetroceder.Name = "btnRetroceder";
+            btnRetroceder.Size = new Size(117, 40);
+            btnRetroceder.TabIndex = 22;
+            btnRetroceder.Text = "Retroceder";
+            btnRetroceder.UseVisualStyleBackColor = true;
+            btnRetroceder.Click += button1_Click;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(687, 27);
+            label10.Name = "label10";
+            label10.Size = new Size(69, 35);
+            label10.TabIndex = 23;
+            label10.Text = "<==";
+            // 
+            // FrmProductos
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlDarkDark;
+            ClientSize = new Size(891, 1055);
+            Controls.Add(label10);
+            Controls.Add(btnRetroceder);
+            Controls.Add(dgvProductos);
+            Controls.Add(txtBuscar);
+            Controls.Add(label9);
+            Controls.Add(btnLimpiar);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnModificar);
+            Controls.Add(btnGuardar);
+            Controls.Add(txtExistencias);
+            Controls.Add(label8);
+            Controls.Add(txtPrecioVenta);
+            Controls.Add(txtPrecioCosto);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(cmbCategoria);
+            Controls.Add(label5);
+            Controls.Add(txtNombre);
+            Controls.Add(label4);
+            Controls.Add(txtCodigo);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "FrmProductos";
+            Text = "Productos";
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+
+        }
+
+        #endregion
+
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private TextBox txtCodigo;
+        private TextBox txtNombre;
+        private Label label4;
+        private Label label5;
+        private ComboBox cmbCategoria;
+        private Label label6;
+        private Label label7;
+        private TextBox txtPrecioCosto;
+        private TextBox txtPrecioVenta;
+        private Label label8;
+        private TextBox txtExistencias;
+        private Button btnGuardar;
+        private Button btnModificar;
+        private Button btnEliminar;
+        private Button btnLimpiar;
+        private Label label9;
+        private TextBox txtBuscar;
+        private DataGridView dgvProductos;
+        private DataGridViewTextBoxColumn Codigo;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Categoria;
+        private DataGridViewTextBoxColumn PrecioCosto;
+        private DataGridViewTextBoxColumn PrecioVenta;
+        private DataGridViewTextBoxColumn Existencias;
+        private Button btnRetroceder;
+        private Label label10;
+    }
+}

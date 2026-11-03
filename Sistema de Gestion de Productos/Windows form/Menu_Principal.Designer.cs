@@ -43,6 +43,7 @@
             buttonCategoria.TabIndex = 1;
             buttonCategoria.Text = "Administrar Categorias";
             buttonCategoria.UseVisualStyleBackColor = true;
+            buttonCategoria.Click += buttonCategoria_Click;
             // 
             // label1
             // 
@@ -74,6 +75,7 @@
             buttonProductos.TabIndex = 4;
             buttonProductos.Text = "Administrar Productos";
             buttonProductos.UseVisualStyleBackColor = true;
+            buttonProductos.Click += buttonProductos_Click;
             // 
             // Menu_Principal
             // 
