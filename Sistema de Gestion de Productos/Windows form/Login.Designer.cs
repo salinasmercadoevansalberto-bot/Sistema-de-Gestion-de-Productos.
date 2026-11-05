@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             buttonIniciar_secion = new Button();
             label1 = new Label();
             label2 = new Label();
             textBoxUsuario = new TextBox();
             label3 = new Label();
             textBoxContraseña = new TextBox();
+            errorProvider1 = new ErrorProvider(components);
+            errorProvider2 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             SuspendLayout();
             // 
             // buttonIniciar_secion
@@ -46,6 +51,7 @@
             buttonIniciar_secion.TabIndex = 0;
             buttonIniciar_secion.Text = "Iniciar Secion";
             buttonIniciar_secion.UseVisualStyleBackColor = false;
+            buttonIniciar_secion.Click += buttonIniciar_secion_Click;
             // 
             // label1
             // 
@@ -73,6 +79,7 @@
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.Size = new Size(415, 27);
             textBoxUsuario.TabIndex = 3;
+            textBoxUsuario.TextChanged += textBoxUsuario_TextChanged;
             // 
             // label3
             // 
@@ -91,6 +98,14 @@
             textBoxContraseña.Size = new Size(417, 27);
             textBoxContraseña.TabIndex = 5;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            errorProvider2.ContainerControl = this;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -106,6 +121,8 @@
             ForeColor = Color.Black;
             Name = "Login";
             Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -118,5 +135,7 @@
         private TextBox textBoxUsuario;
         private Label label3;
         private TextBox textBoxContraseña;
+        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
     }
 }
