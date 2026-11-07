@@ -21,5 +21,10 @@ namespace Sistema_de_Gestion_de_Productos_
         {
             Funcion_de_Regreso_Boton.Regreso(this);
         }
+
+        private void FrmCategorias_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

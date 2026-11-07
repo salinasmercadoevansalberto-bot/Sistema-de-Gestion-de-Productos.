@@ -167,7 +167,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             // btnRetroceder
             // 
-            btnRetroceder.Location = new Point(12, 12);
+            btnRetroceder.Location = new Point(12, 27);
             btnRetroceder.Name = "btnRetroceder";
             btnRetroceder.Size = new Size(117, 40);
             btnRetroceder.TabIndex = 46;
@@ -179,7 +179,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.CadetBlue;
+            BackColor = Color.MediumAquamarine;
             ClientSize = new Size(951, 823);
             Controls.Add(btnRetroceder);
             Controls.Add(btnLimpiar);
@@ -197,6 +197,7 @@ namespace Sistema_de_Gestion_de_Productos_
             Margin = new Padding(3, 4, 3, 4);
             Name = "FrmCategorias";
             Text = "Categorías";
+            Load += FrmCategorias_Load;
             ResumeLayout(false);
             PerformLayout();
 

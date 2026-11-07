@@ -45,7 +45,6 @@ namespace Sistema_de_Gestion_de_Productos_
             PrecioVenta = new DataGridViewTextBoxColumn();
             Existencias = new DataGridViewTextBoxColumn();
             btnRetroceder = new Button();
-            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             SuspendLayout();
             // 
@@ -54,7 +53,7 @@ namespace Sistema_de_Gestion_de_Productos_
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(49, 27);
+            label1.Location = new Point(199, 27);
             label1.Name = "label1";
             label1.Size = new Size(383, 35);
             label1.TabIndex = 1;
@@ -296,7 +295,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             // btnRetroceder
             // 
-            btnRetroceder.Location = new Point(762, 22);
+            btnRetroceder.Location = new Point(37, 22);
             btnRetroceder.Name = "btnRetroceder";
             btnRetroceder.Size = new Size(117, 40);
             btnRetroceder.TabIndex = 22;
@@ -304,23 +303,12 @@ namespace Sistema_de_Gestion_de_Productos_
             btnRetroceder.UseVisualStyleBackColor = true;
             btnRetroceder.Click += button1_Click;
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(687, 27);
-            label10.Name = "label10";
-            label10.Size = new Size(69, 35);
-            label10.TabIndex = 23;
-            label10.Text = "<==";
-            // 
             // FrmProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = Color.MediumAquamarine;
             ClientSize = new Size(891, 1055);
-            Controls.Add(label10);
             Controls.Add(btnRetroceder);
             Controls.Add(dgvProductos);
             Controls.Add(txtBuscar);
@@ -346,6 +334,7 @@ namespace Sistema_de_Gestion_de_Productos_
             Margin = new Padding(3, 4, 3, 4);
             Name = "FrmProductos";
             Text = "Productos";
+            Load += FrmProductos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -382,6 +371,5 @@ namespace Sistema_de_Gestion_de_Productos_
         private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn Existencias;
         private Button btnRetroceder;
-        private Label label10;
     }
 }

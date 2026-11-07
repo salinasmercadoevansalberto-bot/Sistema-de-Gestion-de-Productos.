@@ -111,7 +111,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(834, 554);
             Controls.Add(textBoxContraseña);
             Controls.Add(label3);
             Controls.Add(textBoxUsuario);

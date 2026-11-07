@@ -10,7 +10,7 @@ namespace Sistema_de_Gestion_de_Productos_.Windows_form
 {
     public partial class Menu_Principal : Form
     {
-        public Menu_Principal()
+        public Menu_Principal(string v)
         {
             InitializeComponent();
         }
