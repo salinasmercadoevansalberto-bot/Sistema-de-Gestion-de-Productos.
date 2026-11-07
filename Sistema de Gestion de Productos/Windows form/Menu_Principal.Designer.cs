@@ -32,6 +32,7 @@
             label1 = new Label();
             buttonSalir = new Button();
             buttonProductos = new Button();
+            buttonProbarBd = new Button();
             SuspendLayout();
             // 
             // buttonCategoria
@@ -77,12 +78,23 @@
             buttonProductos.UseVisualStyleBackColor = true;
             buttonProductos.Click += buttonProductos_Click;
             // 
+            // buttonProbarBd
+            // 
+            buttonProbarBd.Location = new Point(68, 384);
+            buttonProbarBd.Name = "buttonProbarBd";
+            buttonProbarBd.Size = new Size(117, 38);
+            buttonProbarBd.TabIndex = 5;
+            buttonProbarBd.Text = "ProbarBD";
+            buttonProbarBd.UseVisualStyleBackColor = true;
+            buttonProbarBd.Click += buttonProbarBd_Click;
+            // 
             // Menu_Principal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 192, 192);
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonProbarBd);
             Controls.Add(buttonProductos);
             Controls.Add(buttonSalir);
             Controls.Add(label1);
@@ -99,5 +111,6 @@
         private Label label1;
         private Button buttonSalir;
         private Button buttonProductos;
+        private Button buttonProbarBd;
     }
 }

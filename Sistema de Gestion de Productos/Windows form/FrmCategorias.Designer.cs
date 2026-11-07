@@ -108,6 +108,7 @@ namespace Sistema_de_Gestion_de_Productos_
             lstCategorias.Name = "lstCategorias";
             lstCategorias.Size = new Size(368, 284);
             lstCategorias.TabIndex = 36;
+            lstCategorias.SelectedIndexChanged += lstCategorias_SelectedIndexChanged;
             // 
             // label5
             // 

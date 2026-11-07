@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema_de_Gestion_de_Productos_.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,32 @@ namespace Sistema_de_Gestion_de_Productos_.Windows_form
             this.Hide();
             formulario.ShowDialog();
             this.Show();
+        }
+
+        private void buttonProbarBd_Click(object sender, EventArgs e)
+        {
+            ConexionBD conexion = new ConexionBD();
+
+            if (conexion.ProbarConexion())
+            {
+                MessageBox.Show(
+                    "Conexión exitosa con la base de datos.",
+                    "Conexión",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+            {
+                MessageBox.Show(
+                    "No se pudo conectar con la base de datos.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            conexion.Dispose();
         }
     }
 }

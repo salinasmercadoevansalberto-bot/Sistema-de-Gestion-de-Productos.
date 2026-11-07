@@ -26,5 +26,10 @@ namespace Sistema_de_Gestion_de_Productos_
         {
 
         }
+
+        private void lstCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
