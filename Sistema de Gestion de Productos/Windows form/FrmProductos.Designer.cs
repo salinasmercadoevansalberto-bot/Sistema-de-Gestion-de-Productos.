@@ -17,6 +17,7 @@ namespace Sistema_de_Gestion_de_Productos_
 
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -26,9 +27,7 @@ namespace Sistema_de_Gestion_de_Productos_
             label5 = new Label();
             cmbCategoria = new ComboBox();
             label6 = new Label();
-            label7 = new Label();
             txtPrecioCosto = new TextBox();
-            txtPrecioVenta = new TextBox();
             label8 = new Label();
             txtExistencias = new TextBox();
             btnGuardar = new Button();
@@ -45,7 +44,11 @@ namespace Sistema_de_Gestion_de_Productos_
             PrecioVenta = new DataGridViewTextBoxColumn();
             Existencias = new DataGridViewTextBoxColumn();
             btnRetroceder = new Button();
+            errorProvider1 = new ErrorProvider(components);
+            label7 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -136,30 +139,12 @@ namespace Sistema_de_Gestion_de_Productos_
             label6.TabIndex = 9;
             label6.Text = "Precio de costo:";
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = SystemColors.ControlLightLight;
-            label7.Location = new Point(317, 439);
-            label7.Name = "label7";
-            label7.Size = new Size(172, 26);
-            label7.TabIndex = 10;
-            label7.Text = "Precio de venta:";
-            // 
             // txtPrecioCosto
             // 
             txtPrecioCosto.Location = new Point(49, 498);
             txtPrecioCosto.Name = "txtPrecioCosto";
             txtPrecioCosto.Size = new Size(193, 27);
             txtPrecioCosto.TabIndex = 11;
-            // 
-            // txtPrecioVenta
-            // 
-            txtPrecioVenta.Location = new Point(318, 498);
-            txtPrecioVenta.Name = "txtPrecioVenta";
-            txtPrecioVenta.Size = new Size(192, 27);
-            txtPrecioVenta.TabIndex = 12;
             // 
             // label8
             // 
@@ -216,7 +201,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             btnLimpiar.BackColor = Color.RoyalBlue;
             btnLimpiar.ForeColor = SystemColors.ControlLightLight;
-            btnLimpiar.Location = new Point(49, 740);
+            btnLimpiar.Location = new Point(493, 670);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(131, 48);
             btnLimpiar.TabIndex = 18;
@@ -228,7 +213,7 @@ namespace Sistema_de_Gestion_de_Productos_
             label9.AutoSize = true;
             label9.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ControlLightLight;
-            label9.Location = new Point(49, 831);
+            label9.Location = new Point(329, 762);
             label9.Name = "label9";
             label9.Size = new Size(236, 26);
             label9.TabIndex = 19;
@@ -236,7 +221,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(49, 869);
+            txtBuscar.Location = new Point(284, 791);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(281, 27);
             txtBuscar.TabIndex = 20;
@@ -245,7 +230,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Codigo, Nombre, Categoria, PrecioCosto, PrecioVenta, Existencias });
-            dgvProductos.Location = new Point(49, 911);
+            dgvProductos.Location = new Point(49, 835);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 51;
             dgvProductos.Size = new Size(797, 84);
@@ -303,12 +288,36 @@ namespace Sistema_de_Gestion_de_Productos_
             btnRetroceder.UseVisualStyleBackColor = true;
             btnRetroceder.Click += button1_Click;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.ControlLightLight;
+            label7.Location = new Point(466, 439);
+            label7.Name = "label7";
+            label7.Size = new Size(227, 26);
+            label7.TabIndex = 23;
+            label7.Text = "Fecha de Adquisicion:";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(441, 481);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(286, 27);
+            dateTimePicker1.TabIndex = 24;
+            // 
             // FrmProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumAquamarine;
             ClientSize = new Size(891, 1055);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(label7);
             Controls.Add(btnRetroceder);
             Controls.Add(dgvProductos);
             Controls.Add(txtBuscar);
@@ -319,9 +328,7 @@ namespace Sistema_de_Gestion_de_Productos_
             Controls.Add(btnGuardar);
             Controls.Add(txtExistencias);
             Controls.Add(label8);
-            Controls.Add(txtPrecioVenta);
             Controls.Add(txtPrecioCosto);
-            Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(cmbCategoria);
             Controls.Add(label5);
@@ -336,6 +343,7 @@ namespace Sistema_de_Gestion_de_Productos_
             Text = "Productos";
             Load += FrmProductos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -352,9 +360,7 @@ namespace Sistema_de_Gestion_de_Productos_
         private Label label5;
         private ComboBox cmbCategoria;
         private Label label6;
-        private Label label7;
         private TextBox txtPrecioCosto;
-        private TextBox txtPrecioVenta;
         private Label label8;
         private TextBox txtExistencias;
         private Button btnGuardar;
@@ -371,5 +377,8 @@ namespace Sistema_de_Gestion_de_Productos_
         private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn Existencias;
         private Button btnRetroceder;
+        private ErrorProvider errorProvider1;
+        private DateTimePicker dateTimePicker1;
+        private Label label7;
     }
 }
