@@ -100,37 +100,6 @@ namespace Sistema_de_Gestion_de_Productos_
             }
         }
 
-        // Registrar un producto.
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!ValidarDatos())
-                    return;
-
-                Producto producto = CrearProducto();
-
-                datosProductos.RegistrarProducto(producto);
-
-                MessageBox.Show(
-                    "Producto registrado correctamente.",
-                    "Registro exitoso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-
-                CargarProductos();
-                LimpiarCampos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    "No se pudo registrar el producto: " + ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-        }
-
         // Modificar un producto seleccionado.
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -351,6 +320,20 @@ namespace Sistema_de_Gestion_de_Productos_
         private void label5_Click(object sender, EventArgs e)
         {
             // Sin acción asignada.
+        }
+        // Cargar los datos del producto seleccionado.
+        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            DataGridViewRow fila = dgvProductos.Rows[e.RowIndex];
+
+            txtNombre.Text = fila.Cells["Nombre"].Value?.ToString();
+            txtPrecioCosto.Text = fila.Cells["Precio"].Value?.ToString();
+            txtExistencias.Text = fila.Cells["Existencias"].Value?.ToString();
+
+            cmbCategoria.Text = fila.Cells["Categoria"].Value?.ToString();
         }
     }
 }

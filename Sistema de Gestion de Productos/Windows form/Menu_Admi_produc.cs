@@ -11,22 +11,23 @@ namespace Sistema_de_Gestion_de_Productos_.Windows_form
 {
     public partial class Menu_admi_produc : Form
     {
-        public Menu_admi_produc(string v)
+        public Menu_admi_produc()
         {
             InitializeComponent();
         }
 
         private void buttonProductos_Click(object sender, EventArgs e)
         {
-            FrmProductos formulario = new FrmProductos();
+            FrmRegistro formulario = new FrmRegistro();
             this.Hide();
             formulario.ShowDialog();
             this.Show();
+
         }
 
         private void buttonCategoria_Click(object sender, EventArgs e)
         {
-            FrmRegistro formulario = new FrmRegistro();
+            FrmProductos formulario = new FrmProductos();
             this.Hide();
             formulario.ShowDialog();
             this.Show();
@@ -63,6 +64,11 @@ namespace Sistema_de_Gestion_de_Productos_.Windows_form
              "Confirmar salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (respuesta == DialogResult.Yes)
                 Application.Exit();
+        }
+
+        private void btnRetroceder_Click(object sender, EventArgs e)
+        {
+            Funcion_de_Regreso_Boton.Regreso(this);
         }
     }
 }

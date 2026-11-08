@@ -33,6 +33,7 @@
             buttonSalir = new Button();
             buttonProductos = new Button();
             buttonProbarBd = new Button();
+            btnRetroceder = new Button();
             SuspendLayout();
             // 
             // buttonCategoria
@@ -89,12 +90,23 @@
             buttonProbarBd.UseVisualStyleBackColor = true;
             buttonProbarBd.Click += buttonProbarBd_Click;
             // 
+            // btnRetroceder
+            // 
+            btnRetroceder.Location = new Point(6, 12);
+            btnRetroceder.Name = "btnRetroceder";
+            btnRetroceder.Size = new Size(117, 40);
+            btnRetroceder.TabIndex = 23;
+            btnRetroceder.Text = "Retroceder";
+            btnRetroceder.UseVisualStyleBackColor = true;
+            btnRetroceder.Click += btnRetroceder_Click;
+            // 
             // Menu_admi_produc
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 192, 192);
             ClientSize = new Size(800, 450);
+            Controls.Add(btnRetroceder);
             Controls.Add(buttonProbarBd);
             Controls.Add(buttonProductos);
             Controls.Add(buttonSalir);
@@ -113,5 +125,6 @@
         private Button buttonSalir;
         private Button buttonProductos;
         private Button buttonProbarBd;
+        private Button btnRetroceder;
     }
 }

@@ -18,7 +18,7 @@ namespace Sistema_de_Gestion_de_Productos_.Windows_form
 
         private void buttonProductos_Click(object sender, EventArgs e)
         {
-            FrmProductos formulario = new FrmProductos();
+            Menu_admi_produc formulario = new Menu_admi_produc();
             this.Hide();
             formulario.ShowDialog();
             this.Show();

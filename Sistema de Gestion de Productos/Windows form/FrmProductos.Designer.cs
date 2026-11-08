@@ -148,21 +148,16 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             // btnGuardar
             // 
-            btnGuardar.BackColor = Color.RoyalBlue;
-            btnGuardar.ForeColor = SystemColors.ControlLightLight;
-            btnGuardar.Location = new Point(62, 520);
+            btnGuardar.Location = new Point(0, 0);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(131, 48);
-            btnGuardar.TabIndex = 15;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += btnGuardar_Click;
+            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.TabIndex = 25;
             // 
             // btnModificar
             // 
             btnModificar.BackColor = Color.RoyalBlue;
             btnModificar.ForeColor = SystemColors.ControlLightLight;
-            btnModificar.Location = new Point(236, 520);
+            btnModificar.Location = new Point(143, 520);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(131, 48);
             btnModificar.TabIndex = 16;
@@ -174,7 +169,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             btnEliminar.BackColor = Color.RoyalBlue;
             btnEliminar.ForeColor = SystemColors.ControlLightLight;
-            btnEliminar.Location = new Point(408, 520);
+            btnEliminar.Location = new Point(349, 520);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(131, 48);
             btnEliminar.TabIndex = 17;
@@ -186,7 +181,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             btnLimpiar.BackColor = Color.RoyalBlue;
             btnLimpiar.ForeColor = SystemColors.ControlLightLight;
-            btnLimpiar.Location = new Point(608, 520);
+            btnLimpiar.Location = new Point(565, 520);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(131, 48);
             btnLimpiar.TabIndex = 18;
@@ -287,21 +282,21 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             PrecioVenta.HeaderText = "Fecha de registro";
             PrecioVenta.MinimumWidth = 6;
-            PrecioVenta.Name = "Fecha de registro";
+            PrecioVenta.Name = "PrecioVenta";
             PrecioVenta.Width = 125;
             // 
             // Existencias
             // 
             Existencias.HeaderText = "Stock";
             Existencias.MinimumWidth = 6;
-            Existencias.Name = "Stock";
+            Existencias.Name = "Existencias";
             Existencias.Width = 125;
             // 
             // Total
             // 
             Total.HeaderText = "Valor del inventario";
             Total.MinimumWidth = 6;
-            Total.Name = "Valor del inventario";
+            Total.Name = "Total";
             Total.Width = 125;
             // 
             // FrmProductos

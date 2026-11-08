@@ -9,36 +9,43 @@ namespace Sistema_de_Gestion_de_Productos_
     [System.ComponentModel.DesignerCategory("Form")]
     public partial class FrmRegistro : Form
     {
-        private readonly BaseDatosProductos datosProductos = new BaseDatosProductos();
-        private readonly BaseDatosCategoria datosCategorias = new BaseDatosCategoria();
+        private readonly BaseDatosProductos datosProductos =
+            new BaseDatosProductos();
 
-        private List<Categorias> listaCategorias = new List<Categorias>();
+        private readonly BaseDatosCategoria datosCategorias =
+            new BaseDatosCategoria();
+
+        private List<Categorias> listaCategorias =
+            new List<Categorias>();
 
         public FrmRegistro()
         {
             InitializeComponent();
 
-            // Evento para buscar mientras se escribe.
+            this.Load += FrmRegistro_Load;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
         }
 
+        // Cargar información inicial.
         private void FrmRegistro_Load(object sender, EventArgs e)
         {
-            // La fecha se registra automáticamente en SQL Server.
             dateTimePicker1.Visible = false;
             label7.Visible = false;
 
-            // Ajustar encabezados de las columnas.
-            PrecioCosto.HeaderText = "Precio";
-            PrecioVenta.HeaderText = "Fecha de registro";
-            Existencias.HeaderText = "Stock";
-            Total.HeaderText = "Valor del inventario";
+            
+
+            dgvProductos.ReadOnly = true;
+            dgvProductos.AllowUserToAddRows = false;
+            dgvProductos.AllowUserToDeleteRows = false;
+            dgvProductos.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+            dgvProductos.MultiSelect = false;
 
             CargarCategorias();
             CargarProductos();
         }
 
-        // Cargar las categorías en el ComboBox.
+        // Cargar categorías.
         private void CargarCategorias()
         {
             try
@@ -46,9 +53,10 @@ namespace Sistema_de_Gestion_de_Productos_
                 listaCategorias = datosCategorias.ObtenerCategorias();
 
                 cmbCategoria.DataSource = null;
-                cmbCategoria.DataSource = listaCategorias;
                 cmbCategoria.DisplayMember = "Nombre";
                 cmbCategoria.ValueMember = "Id_Categoria";
+                cmbCategoria.DataSource = listaCategorias;
+
                 cmbCategoria.SelectedIndex = -1;
             }
             catch (Exception ex)
@@ -61,37 +69,19 @@ namespace Sistema_de_Gestion_de_Productos_
             }
         }
 
-        // Cargar los productos en el DataGridView.
+        // Cargar productos.
         private void CargarProductos()
         {
             try
             {
                 dgvProductos.Rows.Clear();
 
-                List<Producto> productos = datosProductos.ObtenerProductos();
+                List<Producto> productos =
+                    datosProductos.ObtenerProductos();
 
                 foreach (Producto producto in productos)
                 {
-                    string nombreCategoria = "Sin categoría";
-
-                    foreach (Categorias categoria in listaCategorias)
-                    {
-                        if (categoria.Id_Categoria == producto.Id_Categoria)
-                        {
-                            nombreCategoria = categoria.Nombre;
-                            break;
-                        }
-                    }
-
-                    dgvProductos.Rows.Add(
-                        producto.Id_Producto,
-                        producto.Nombre,
-                        nombreCategoria,
-                        producto.Precio,
-                        producto.FechaRegistro.ToString("dd/MM/yyyy HH:mm"),
-                        producto.Cantidad,
-                        producto.ValorInventario
-                    );
+                    AgregarProductoTabla(producto);
                 }
             }
             catch (Exception ex)
@@ -104,13 +94,68 @@ namespace Sistema_de_Gestion_de_Productos_
             }
         }
 
-        // Registrar un producto.
+        // Agregar producto a la tabla.
+        private void AgregarProductoTabla(Producto producto)
+        {
+            string nombreCategoria =
+                ObtenerNombreCategoria(producto.Id_Categoria);
+
+            dgvProductos.Rows.Add(
+                producto.Id_Producto,
+                producto.Nombre,
+                nombreCategoria,
+                producto.Precio,
+                producto.FechaRegistro.ToString("dd/MM/yyyy HH:mm"),
+                producto.Cantidad,
+                producto.ValorInventario
+            );
+        }
+
+        // Obtener nombre de categoría.
+        private string ObtenerNombreCategoria(int idCategoria)
+        {
+            foreach (Categorias categoria in listaCategorias)
+            {
+                if (categoria.Id_Categoria == idCategoria)
+                {
+                    return categoria.Nombre;
+                }
+            }
+
+            return "Sin categoría";
+        }
+
+        // Registrar producto.
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!ValidarDatos())
                     return;
+
+                string nombre = txtNombre.Text.Trim();
+
+                List<Producto> encontrados =
+                    datosProductos.BuscarProductos(nombre);
+
+                foreach (Producto existente in encontrados)
+                {
+                    if (existente.Nombre.Trim().Equals(
+                        nombre,
+                        StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show(
+                            "Este producto ya se encuentra registrado.",
+                            "Producto duplicado",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+
+                        txtNombre.Focus();
+                        txtNombre.SelectAll();
+
+                        return;
+                    }
+                }
 
                 Producto producto = CrearProducto();
 
@@ -135,9 +180,7 @@ namespace Sistema_de_Gestion_de_Productos_
             }
         }
 
-        
-
-        // Validar los datos ingresados.
+        // Validar datos.
         private bool ValidarDatos()
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
@@ -147,21 +190,28 @@ namespace Sistema_de_Gestion_de_Productos_
                 return false;
             }
 
-            if (!decimal.TryParse(txtPrecioCosto.Text, out decimal precio) || precio <= 0)
+            if (!decimal.TryParse(txtPrecioCosto.Text, out decimal precio)
+                || precio <= 0)
             {
-                MessageBox.Show("Digite un precio válido mayor que cero.");
+                MessageBox.Show(
+                    "Digite un precio válido mayor que cero.");
+
                 txtPrecioCosto.Focus();
                 return false;
             }
 
-            if (!int.TryParse(txtExistencias.Text, out int stock) || stock < 0)
+            if (!int.TryParse(txtExistencias.Text, out int stock)
+                || stock < 0)
             {
-                MessageBox.Show("Digite una cantidad válida. No puede ser negativa.");
+                MessageBox.Show(
+                    "Digite una cantidad válida. No puede ser negativa.");
+
                 txtExistencias.Focus();
                 return false;
             }
 
-            if (cmbCategoria.SelectedIndex == -1)
+            if (cmbCategoria.SelectedIndex == -1 ||
+                cmbCategoria.SelectedValue == null)
             {
                 MessageBox.Show("Seleccione una categoría.");
                 cmbCategoria.Focus();
@@ -171,7 +221,7 @@ namespace Sistema_de_Gestion_de_Productos_
             return true;
         }
 
-        // Crear el objeto Producto con los datos del formulario.
+        // Crear producto.
         private Producto CrearProducto()
         {
             string nombre = txtNombre.Text.Trim();
@@ -182,31 +232,7 @@ namespace Sistema_de_Gestion_de_Productos_
             return new Producto(nombre, precio, cantidad, idCategoria);
         }
 
-        // Seleccionar un producto desde el DataGridView.
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-                return;
-
-            DataGridViewRow fila = dgvProductos.Rows[e.RowIndex];
-
-            txtNombre.Text = fila.Cells["Nombre"].Value?.ToString();
-            txtPrecioCosto.Text = fila.Cells["PrecioCosto"].Value?.ToString();
-            txtExistencias.Text = fila.Cells["Existencias"].Value?.ToString();
-
-            string nombreCategoria = fila.Cells["Categoria"].Value?.ToString();
-
-            foreach (Categorias categoria in listaCategorias)
-            {
-                if (categoria.Nombre == nombreCategoria)
-                {
-                    cmbCategoria.SelectedValue = categoria.Id_Categoria;
-                    break;
-                }
-            }
-        }
-
-        // Buscar productos por nombre.
+        // Buscar productos.
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             try
@@ -218,26 +244,7 @@ namespace Sistema_de_Gestion_de_Productos_
 
                 foreach (Producto producto in productos)
                 {
-                    string nombreCategoria = "Sin categoría";
-
-                    foreach (Categorias categoria in listaCategorias)
-                    {
-                        if (categoria.Id_Categoria == producto.Id_Categoria)
-                        {
-                            nombreCategoria = categoria.Nombre;
-                            break;
-                        }
-                    }
-
-                    dgvProductos.Rows.Add(
-                        producto.Id_Producto,
-                        producto.Nombre,
-                        nombreCategoria,
-                        producto.Precio,
-                        producto.FechaRegistro.ToString("dd/MM/yyyy HH:mm"),
-                        producto.Cantidad,
-                        producto.ValorInventario
-                    );
+                    AgregarProductoTabla(producto);
                 }
             }
             catch (Exception ex)
@@ -250,7 +257,7 @@ namespace Sistema_de_Gestion_de_Productos_
             }
         }
 
-        // Limpiar los campos del formulario.
+        // Limpiar campos.
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
@@ -262,20 +269,17 @@ namespace Sistema_de_Gestion_de_Productos_
             txtPrecioCosto.Clear();
             txtExistencias.Clear();
             txtBuscar.Clear();
-            cmbCategoria.SelectedIndex = -1;
 
+            cmbCategoria.SelectedIndex = -1;
             dgvProductos.ClearSelection();
+
             txtNombre.Focus();
         }
 
+        // Regresar al menú.
         private void button1_Click(object sender, EventArgs e)
         {
             Funcion_de_Regreso_Boton.Regreso(this);
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-            // Sin acción asignada.
         }
     }
 }

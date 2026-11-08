@@ -98,7 +98,6 @@ namespace Sistema_de_Gestion_de_Productos_
             label5.Size = new Size(114, 26);
             label5.TabIndex = 7;
             label5.Text = "Categoria:";
-            label5.Click += label5_Click;
             // 
             // cmbCategoria
             // 
@@ -227,7 +226,6 @@ namespace Sistema_de_Gestion_de_Productos_
             dgvProductos.RowHeadersWidth = 51;
             dgvProductos.Size = new Size(883, 258);
             dgvProductos.TabIndex = 21;
-            dgvProductos.CellContentClick += dgvProductos_CellContentClick;
             // 
             // Codigo
             // 
