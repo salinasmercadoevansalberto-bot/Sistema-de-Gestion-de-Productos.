@@ -55,7 +55,14 @@ namespace Sistema_de_Gestion_de_Productos_.Windows_form
                 );
             }
 
-            conexion.Dispose();
+        }
+
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta = MessageBox.Show("¿Deseas cerrar la ventana del inventario?",
+             "Confirmar salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (respuesta == DialogResult.Yes)
+                Application.Exit();
         }
     }
 }

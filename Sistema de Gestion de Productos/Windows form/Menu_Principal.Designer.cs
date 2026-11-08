@@ -66,6 +66,7 @@
             buttonSalir.TabIndex = 3;
             buttonSalir.Text = "Salir";
             buttonSalir.UseVisualStyleBackColor = false;
+            buttonSalir.Click += buttonSalir_Click;
             // 
             // buttonProductos
             // 

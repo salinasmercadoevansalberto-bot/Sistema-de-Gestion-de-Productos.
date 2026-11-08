@@ -71,6 +71,7 @@ namespace Sistema_de_Gestion_de_Productos_
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(368, 27);
             txtNombre.TabIndex = 33;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // label3
             // 
@@ -108,7 +109,7 @@ namespace Sistema_de_Gestion_de_Productos_
             lstCategorias.Name = "lstCategorias";
             lstCategorias.Size = new Size(368, 284);
             lstCategorias.TabIndex = 36;
-            lstCategorias.SelectedIndexChanged += lstCategorias_SelectedIndexChanged;
+            lstCategorias.MouseClick += lstCategorias_MouseClick;
             // 
             // label5
             // 
@@ -131,6 +132,7 @@ namespace Sistema_de_Gestion_de_Productos_
             btnLimpiar.TabIndex = 42;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;            
             // 
             // btnEliminar
             // 
@@ -154,6 +156,7 @@ namespace Sistema_de_Gestion_de_Productos_
             btnModificar.TabIndex = 40;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnGuardar
             // 
@@ -165,6 +168,7 @@ namespace Sistema_de_Gestion_de_Productos_
             btnGuardar.TabIndex = 39;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnRetroceder
             // 
