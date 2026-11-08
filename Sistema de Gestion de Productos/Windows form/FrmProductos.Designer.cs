@@ -34,6 +34,10 @@ namespace Sistema_de_Gestion_de_Productos_
             btnLimpiar = new Button();
             label9 = new Label();
             txtBuscar = new TextBox();
+            btnRetroceder = new Button();
+            errorProvider1 = new ErrorProvider(components);
+            label7 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             dgvProductos = new DataGridView();
             Codigo = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
@@ -41,12 +45,9 @@ namespace Sistema_de_Gestion_de_Productos_
             PrecioCosto = new DataGridViewTextBoxColumn();
             PrecioVenta = new DataGridViewTextBoxColumn();
             Existencias = new DataGridViewTextBoxColumn();
-            btnRetroceder = new Button();
-            errorProvider1 = new ErrorProvider(components);
-            label7 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
+            Total = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -211,58 +212,6 @@ namespace Sistema_de_Gestion_de_Productos_
             txtBuscar.Size = new Size(281, 27);
             txtBuscar.TabIndex = 20;
             // 
-            // dgvProductos
-            // 
-            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Codigo, Nombre, Categoria, PrecioCosto, PrecioVenta, Existencias });
-            dgvProductos.Location = new Point(62, 721);
-            dgvProductos.Name = "dgvProductos";
-            dgvProductos.RowHeadersWidth = 51;
-            dgvProductos.Size = new Size(797, 84);
-            dgvProductos.TabIndex = 21;
-            // 
-            // Codigo
-            // 
-            Codigo.HeaderText = "Codigo";
-            Codigo.MinimumWidth = 6;
-            Codigo.Name = "Codigo";
-            Codigo.Width = 125;
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.MinimumWidth = 6;
-            Nombre.Name = "Nombre";
-            Nombre.Width = 125;
-            // 
-            // Categoria
-            // 
-            Categoria.HeaderText = "Categoria";
-            Categoria.MinimumWidth = 6;
-            Categoria.Name = "Categoria";
-            Categoria.Width = 125;
-            // 
-            // PrecioCosto
-            // 
-            PrecioCosto.HeaderText = "Precio costo";
-            PrecioCosto.MinimumWidth = 6;
-            PrecioCosto.Name = "PrecioCosto";
-            PrecioCosto.Width = 125;
-            // 
-            // PrecioVenta
-            // 
-            PrecioVenta.HeaderText = "Precio Venta";
-            PrecioVenta.MinimumWidth = 6;
-            PrecioVenta.Name = "PrecioVenta";
-            PrecioVenta.Width = 125;
-            // 
-            // Existencias
-            // 
-            Existencias.HeaderText = "Existencias";
-            Existencias.MinimumWidth = 6;
-            Existencias.Name = "Existencias";
-            Existencias.Width = 125;
-            // 
             // btnRetroceder
             // 
             btnRetroceder.Location = new Point(37, 22);
@@ -295,6 +244,66 @@ namespace Sistema_de_Gestion_de_Productos_
             dateTimePicker1.Size = new Size(286, 27);
             dateTimePicker1.TabIndex = 24;
             // 
+            // dgvProductos
+            // 
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Codigo, Nombre, Categoria, PrecioCosto, PrecioVenta, Existencias, Total });
+            dgvProductos.Location = new Point(-4, 723);
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.RowHeadersWidth = 51;
+            dgvProductos.Size = new Size(902, 258);
+            dgvProductos.TabIndex = 21;
+            dgvProductos.CellContentClick += dgvProductos_CellContentClick;
+            // 
+            // Codigo
+            // 
+            Codigo.HeaderText = "Codigo";
+            Codigo.MinimumWidth = 6;
+            Codigo.Name = "Codigo";
+            Codigo.Width = 125;
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.MinimumWidth = 6;
+            Nombre.Name = "Nombre";
+            Nombre.Width = 125;
+            // 
+            // Categoria
+            // 
+            Categoria.HeaderText = "Categoria";
+            Categoria.MinimumWidth = 6;
+            Categoria.Name = "Categoria";
+            Categoria.Width = 125;
+            // 
+            // PrecioCosto
+            // 
+            PrecioCosto.HeaderText = "Precio";
+            PrecioCosto.MinimumWidth = 6;
+            PrecioCosto.Name = "PrecioCosto";
+            PrecioCosto.Width = 125;
+            // 
+            // PrecioVenta
+            // 
+            PrecioVenta.HeaderText = "Fecha de registro";
+            PrecioVenta.MinimumWidth = 6;
+            PrecioVenta.Name = "Fecha de registro";
+            PrecioVenta.Width = 125;
+            // 
+            // Existencias
+            // 
+            Existencias.HeaderText = "Stock";
+            Existencias.MinimumWidth = 6;
+            Existencias.Name = "Stock";
+            Existencias.Width = 125;
+            // 
+            // Total
+            // 
+            Total.HeaderText = "Valor del inventario";
+            Total.MinimumWidth = 6;
+            Total.Name = "Valor del inventario";
+            Total.Width = 125;
+            // 
             // FrmProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -325,8 +334,8 @@ namespace Sistema_de_Gestion_de_Productos_
             Name = "FrmProductos";
             Text = "Productos";
             Load += FrmProductos_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -350,6 +359,10 @@ namespace Sistema_de_Gestion_de_Productos_
         private Button btnLimpiar;
         private Label label9;
         private TextBox txtBuscar;
+        private Button btnRetroceder;
+        private ErrorProvider errorProvider1;
+        private DateTimePicker dateTimePicker1;
+        private Label label7;
         private DataGridView dgvProductos;
         private DataGridViewTextBoxColumn Codigo;
         private DataGridViewTextBoxColumn Nombre;
@@ -357,9 +370,6 @@ namespace Sistema_de_Gestion_de_Productos_
         private DataGridViewTextBoxColumn PrecioCosto;
         private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn Existencias;
-        private Button btnRetroceder;
-        private ErrorProvider errorProvider1;
-        private DateTimePicker dateTimePicker1;
-        private Label label7;
+        private DataGridViewTextBoxColumn Total;
     }
 }
