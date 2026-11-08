@@ -59,7 +59,7 @@ namespace Sistema_de_Gestion_de_Productos_.Windows_form
 
         private void buttonSalir_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta = MessageBox.Show("¿Deseas cerrar la ventana del inventario?",
+            DialogResult respuesta = MessageBox.Show("¿Deseas cerrar la aplicación inventario?",
              "Confirmar salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (respuesta == DialogResult.Yes)
                 Application.Exit();

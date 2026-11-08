@@ -32,12 +32,12 @@ namespace Sistema_de_Gestion_de_Productos_
 
         private void textBoxUsuario_TextChanged(object sender, EventArgs e)
         {
-            Error_providers.ErrorUsuario(errorProvider1, textBoxUsuario);
+            ErrorProviders.ErrorUsuario(errorProvider1, textBoxUsuario);
         }
 
         private void textBoxContraseña_TextChanged(object sender, EventArgs e)
         {
-            Error_providers.ErrorContraseña(errorProvider2, textBoxContraseña);
+            ErrorProviders.ErrorContraseña(errorProvider2, textBoxContraseña);
         }
     }
 }

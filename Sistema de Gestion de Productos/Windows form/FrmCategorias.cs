@@ -1,7 +1,8 @@
 
+using Sistema_de_Gestion_de_Productos_.Clases;
+using Sistema_de_Gestion_de_Productos_.Windows_form.Funciones_Fronted;
 using System;
 using System.Windows.Forms;
-using Sistema_de_Gestion_de_Productos_.Clases;
 
 namespace Sistema_de_Gestion_de_Productos_
 {
@@ -109,7 +110,7 @@ namespace Sistema_de_Gestion_de_Productos_
                     "Error al registrar la categoría: " + ex.Message
                 );
             }
-            
+
         }
 
         // Modifica la categoría seleccionada.
@@ -209,7 +210,12 @@ namespace Sistema_de_Gestion_de_Productos_
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
+            ErrorProviders.ErrorNombreC(errorProviderNom, txtNombre);
+        }
 
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            ErrorProviders.ErrorDescripcionC(errorProviderDescrip, txtDescripcion);
         }
     }
 }

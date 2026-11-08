@@ -28,6 +28,7 @@ namespace Sistema_de_Gestion_de_Productos_
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             txtNombre = new TextBox();
@@ -41,6 +42,10 @@ namespace Sistema_de_Gestion_de_Productos_
             btnModificar = new Button();
             btnGuardar = new Button();
             btnRetroceder = new Button();
+            errorProviderNom = new ErrorProvider(components);
+            errorProviderDescrip = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProviderNom).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderDescrip).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -90,6 +95,7 @@ namespace Sistema_de_Gestion_de_Productos_
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(368, 27);
             txtDescripcion.TabIndex = 35;
+            txtDescripcion.TextChanged += txtDescripcion_TextChanged;
             // 
             // label4
             // 
@@ -132,7 +138,7 @@ namespace Sistema_de_Gestion_de_Productos_
             btnLimpiar.TabIndex = 42;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
-            btnLimpiar.Click += btnLimpiar_Click;            
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnEliminar
             // 
@@ -180,6 +186,14 @@ namespace Sistema_de_Gestion_de_Productos_
             btnRetroceder.UseVisualStyleBackColor = true;
             btnRetroceder.Click += btnRetroceder_Click;
             // 
+            // errorProviderNom
+            // 
+            errorProviderNom.ContainerControl = this;
+            // 
+            // errorProviderDescrip
+            // 
+            errorProviderDescrip.ContainerControl = this;
+            // 
             // FrmCategorias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -203,6 +217,8 @@ namespace Sistema_de_Gestion_de_Productos_
             Name = "FrmCategorias";
             Text = "Categorías";
             Load += FrmCategorias_Load;
+            ((System.ComponentModel.ISupportInitialize)errorProviderNom).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderDescrip).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -223,5 +239,7 @@ namespace Sistema_de_Gestion_de_Productos_
         private Button btnModificar;
         private Button btnGuardar;
         private Button btnRetroceder;
+        private ErrorProvider errorProviderNom;
+        private ErrorProvider errorProviderDescrip;
     }
 }
