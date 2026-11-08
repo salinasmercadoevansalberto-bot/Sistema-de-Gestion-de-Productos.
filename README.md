@@ -123,5 +123,3 @@ La utilicé para:
 - Mejorar la organización y comprensión del código mediante explicaciones y ejemplos.
 
 La inteligencia artificial fue una herramienta de consulta y aprendizaje que me permitió avanzar con mayor claridad durante el desarrollo. Sin embargo, fui responsable de analizar las respuestas, adaptar las soluciones a los requerimientos del proyecto, realizar las modificaciones correspondientes y comprobar el funcionamiento del sistema.
-
-**Nota:** La inteligencia artificial no está integrada como una funcionalidad del sistema. Se utilizó como herramienta de apoyo durante las etapas de planificación, aprendizaje y desarrollo.
