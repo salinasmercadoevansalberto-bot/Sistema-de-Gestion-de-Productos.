@@ -20,8 +20,6 @@ namespace Sistema_de_Gestion_de_Productos_
             components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
-            txtCodigo = new TextBox();
             txtNombre = new TextBox();
             label4 = new Label();
             label5 = new Label();
@@ -73,27 +71,9 @@ namespace Sistema_de_Gestion_de_Productos_
             label2.TabIndex = 2;
             label2.Text = "Registro y mantenimiento de productos del inventario";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(49, 139);
-            label3.Name = "label3";
-            label3.Size = new Size(215, 26);
-            label3.TabIndex = 3;
-            label3.Text = "Codigo del producto:";
-            // 
-            // txtCodigo
-            // 
-            txtCodigo.Location = new Point(49, 178);
-            txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(368, 27);
-            txtCodigo.TabIndex = 4;
-            // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(49, 277);
+            txtNombre.Location = new Point(49, 174);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(368, 27);
             txtNombre.TabIndex = 6;
@@ -103,7 +83,7 @@ namespace Sistema_de_Gestion_de_Productos_
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ControlLightLight;
-            label4.Location = new Point(49, 238);
+            label4.Location = new Point(49, 130);
             label4.Name = "label4";
             label4.Size = new Size(225, 26);
             label4.TabIndex = 5;
@@ -114,16 +94,17 @@ namespace Sistema_de_Gestion_de_Productos_
             label5.AutoSize = true;
             label5.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ControlLightLight;
-            label5.Location = new Point(49, 333);
+            label5.Location = new Point(49, 221);
             label5.Name = "label5";
             label5.Size = new Size(114, 26);
             label5.TabIndex = 7;
             label5.Text = "Categoria:";
+            label5.Click += label5_Click;
             // 
             // cmbCategoria
             // 
             cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(49, 362);
+            cmbCategoria.Location = new Point(49, 271);
             cmbCategoria.Name = "cmbCategoria";
             cmbCategoria.Size = new Size(368, 28);
             cmbCategoria.TabIndex = 8;
@@ -133,7 +114,7 @@ namespace Sistema_de_Gestion_de_Productos_
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = SystemColors.ControlLightLight;
-            label6.Location = new Point(49, 439);
+            label6.Location = new Point(49, 322);
             label6.Name = "label6";
             label6.Size = new Size(171, 26);
             label6.TabIndex = 9;
@@ -141,7 +122,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             // txtPrecioCosto
             // 
-            txtPrecioCosto.Location = new Point(49, 498);
+            txtPrecioCosto.Location = new Point(49, 360);
             txtPrecioCosto.Name = "txtPrecioCosto";
             txtPrecioCosto.Size = new Size(193, 27);
             txtPrecioCosto.TabIndex = 11;
@@ -151,7 +132,7 @@ namespace Sistema_de_Gestion_de_Productos_
             label8.AutoSize = true;
             label8.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.ControlLightLight;
-            label8.Location = new Point(49, 567);
+            label8.Location = new Point(49, 404);
             label8.Name = "label8";
             label8.Size = new Size(131, 26);
             label8.TabIndex = 13;
@@ -159,7 +140,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             // txtExistencias
             // 
-            txtExistencias.Location = new Point(49, 614);
+            txtExistencias.Location = new Point(49, 459);
             txtExistencias.Name = "txtExistencias";
             txtExistencias.Size = new Size(281, 27);
             txtExistencias.TabIndex = 14;
@@ -168,52 +149,56 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             btnGuardar.BackColor = Color.RoyalBlue;
             btnGuardar.ForeColor = SystemColors.ControlLightLight;
-            btnGuardar.Location = new Point(49, 670);
+            btnGuardar.Location = new Point(62, 520);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(131, 48);
             btnGuardar.TabIndex = 15;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnModificar
             // 
             btnModificar.BackColor = Color.RoyalBlue;
             btnModificar.ForeColor = SystemColors.ControlLightLight;
-            btnModificar.Location = new Point(199, 670);
+            btnModificar.Location = new Point(236, 520);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(131, 48);
             btnModificar.TabIndex = 16;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
             btnEliminar.BackColor = Color.RoyalBlue;
             btnEliminar.ForeColor = SystemColors.ControlLightLight;
-            btnEliminar.Location = new Point(347, 670);
+            btnEliminar.Location = new Point(408, 520);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(131, 48);
             btnEliminar.TabIndex = 17;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnLimpiar
             // 
             btnLimpiar.BackColor = Color.RoyalBlue;
             btnLimpiar.ForeColor = SystemColors.ControlLightLight;
-            btnLimpiar.Location = new Point(493, 670);
+            btnLimpiar.Location = new Point(608, 520);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(131, 48);
             btnLimpiar.TabIndex = 18;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ControlLightLight;
-            label9.Location = new Point(329, 762);
+            label9.Location = new Point(284, 612);
             label9.Name = "label9";
             label9.Size = new Size(236, 26);
             label9.TabIndex = 19;
@@ -221,7 +206,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(284, 791);
+            txtBuscar.Location = new Point(284, 653);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(281, 27);
             txtBuscar.TabIndex = 20;
@@ -230,7 +215,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Codigo, Nombre, Categoria, PrecioCosto, PrecioVenta, Existencias });
-            dgvProductos.Location = new Point(49, 835);
+            dgvProductos.Location = new Point(62, 721);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 51;
             dgvProductos.Size = new Size(797, 84);
@@ -297,7 +282,7 @@ namespace Sistema_de_Gestion_de_Productos_
             label7.AutoSize = true;
             label7.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = SystemColors.ControlLightLight;
-            label7.Location = new Point(466, 439);
+            label7.Location = new Point(453, 322);
             label7.Name = "label7";
             label7.Size = new Size(227, 26);
             label7.TabIndex = 23;
@@ -305,7 +290,7 @@ namespace Sistema_de_Gestion_de_Productos_
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(441, 481);
+            dateTimePicker1.Location = new Point(453, 358);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(286, 27);
             dateTimePicker1.TabIndex = 24;
@@ -334,8 +319,6 @@ namespace Sistema_de_Gestion_de_Productos_
             Controls.Add(label5);
             Controls.Add(txtNombre);
             Controls.Add(label4);
-            Controls.Add(txtCodigo);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Margin = new Padding(3, 4, 3, 4);
@@ -353,8 +336,6 @@ namespace Sistema_de_Gestion_de_Productos_
 
         private Label label1;
         private Label label2;
-        private Label label3;
-        private TextBox txtCodigo;
         private TextBox txtNombre;
         private Label label4;
         private Label label5;
