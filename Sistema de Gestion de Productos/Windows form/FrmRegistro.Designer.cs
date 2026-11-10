@@ -33,7 +33,6 @@ namespace Sistema_de_Gestion_de_Productos_
             label9 = new Label();
             txtBuscar = new TextBox();
             btnRetroceder = new Button();
-            errorProvider1 = new ErrorProvider(components);
             label7 = new Label();
             dateTimePicker1 = new DateTimePicker();
             dgvProductos = new DataGridView();
@@ -44,8 +43,13 @@ namespace Sistema_de_Gestion_de_Productos_
             PrecioVenta = new DataGridViewTextBoxColumn();
             Existencias = new DataGridViewTextBoxColumn();
             Total = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            errorProvider2 = new ErrorProvider(components);
+            errorProvider1 = new ErrorProvider(components);
+            errorProvider3 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -76,6 +80,7 @@ namespace Sistema_de_Gestion_de_Productos_
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(368, 27);
             txtNombre.TabIndex = 6;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // label4
             // 
@@ -124,6 +129,7 @@ namespace Sistema_de_Gestion_de_Productos_
             txtPrecioCosto.Name = "txtPrecioCosto";
             txtPrecioCosto.Size = new Size(193, 27);
             txtPrecioCosto.TabIndex = 11;
+            txtPrecioCosto.TextChanged += txtPrecioCosto_TextChanged;
             // 
             // label8
             // 
@@ -142,6 +148,7 @@ namespace Sistema_de_Gestion_de_Productos_
             txtExistencias.Name = "txtExistencias";
             txtExistencias.Size = new Size(281, 27);
             txtExistencias.TabIndex = 14;
+            txtExistencias.TextChanged += txtExistencias_TextChanged;
             // 
             // btnGuardar
             // 
@@ -194,10 +201,6 @@ namespace Sistema_de_Gestion_de_Productos_
             btnRetroceder.Text = "Retroceder";
             btnRetroceder.UseVisualStyleBackColor = true;
             btnRetroceder.Click += button1_Click;
-            // 
-            // errorProvider1
-            // 
-            errorProvider1.ContainerControl = this;
             // 
             // label7
             // 
@@ -276,6 +279,18 @@ namespace Sistema_de_Gestion_de_Productos_
             Total.Name = "Total";
             Total.Width = 125;
             // 
+            // errorProvider2
+            // 
+            errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            errorProvider3.ContainerControl = this;
+            // 
             // FrmRegistro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -303,8 +318,10 @@ namespace Sistema_de_Gestion_de_Productos_
             Margin = new Padding(3, 4, 3, 4);
             Name = "FrmRegistro";
             Text = "Registro de Productos";
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -327,7 +344,6 @@ namespace Sistema_de_Gestion_de_Productos_
         private Label label9;
         private TextBox txtBuscar;
         private Button btnRetroceder;
-        private ErrorProvider errorProvider1;
         private DateTimePicker dateTimePicker1;
         private Label label7;
         private DataGridView dgvProductos;
@@ -338,5 +354,8 @@ namespace Sistema_de_Gestion_de_Productos_
         private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn Existencias;
         private DataGridViewTextBoxColumn Total;
+        private ErrorProvider errorProvider2;
+        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider3;
     }
 }

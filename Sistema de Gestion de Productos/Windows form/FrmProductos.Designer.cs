@@ -46,8 +46,14 @@ namespace Sistema_de_Gestion_de_Productos_
             PrecioVenta = new DataGridViewTextBoxColumn();
             Existencias = new DataGridViewTextBoxColumn();
             Total = new DataGridViewTextBoxColumn();
+            errorProvider2 = new ErrorProvider(components);
+            errorProvider3 = new ErrorProvider(components);
+            errorProvider4 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -78,6 +84,7 @@ namespace Sistema_de_Gestion_de_Productos_
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(368, 27);
             txtNombre.TabIndex = 6;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // label4
             // 
@@ -299,6 +306,18 @@ namespace Sistema_de_Gestion_de_Productos_
             Total.Name = "Total";
             Total.Width = 125;
             // 
+            // errorProvider2
+            // 
+            errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            errorProvider4.ContainerControl = this;
+            // 
             // FrmProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -331,6 +350,9 @@ namespace Sistema_de_Gestion_de_Productos_
             Load += FrmProductos_Load;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -366,5 +388,8 @@ namespace Sistema_de_Gestion_de_Productos_
         private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn Existencias;
         private DataGridViewTextBoxColumn Total;
+        private ErrorProvider errorProvider2;
+        private ErrorProvider errorProvider3;
+        private ErrorProvider errorProvider4;
     }
 }

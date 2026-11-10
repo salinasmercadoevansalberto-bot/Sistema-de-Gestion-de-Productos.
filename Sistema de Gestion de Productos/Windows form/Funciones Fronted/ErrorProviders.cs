@@ -54,5 +54,51 @@ namespace Sistema_de_Gestion_de_Productos_.Windows_form.Funciones_Fronted
                 errorProvider.Clear();
             }
         }
+        public static void ErrorNombreP(ErrorProvider errorProvider,
+            TextBox txtNombre)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                errorProvider.SetError(txtNombre, "El Nombre del producto es obligatorio.");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+        }
+        public static void ErrorPrecio(ErrorProvider errorProvider,
+            TextBox txtPrecio)
+        {
+            if (string.IsNullOrWhiteSpace(txtPrecio.Text))
+            {
+                errorProvider.SetError(txtPrecio, "El Precio del producto es obligatorio.");
+            }
+            if (!decimal.TryParse(txtPrecio.Text, out decimal precio) || precio <= 0)
+            {
+                errorProvider.SetError(txtPrecio, "El Precio del producto debe ser un número mayor que cero.");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+          
+        }
+        public static void Stock(ErrorProvider errorProvider,
+            TextBox txtStock)
+        {
+            if (string.IsNullOrWhiteSpace(txtStock.Text))
+            {
+                errorProvider.SetError(txtStock, "El Stock  del producto es obligatorio.");
+            }
+            if (!int.TryParse(txtStock.Text, out int stock) || stock < 0)
+            {
+                errorProvider.SetError(txtStock, "El Stock del producto debe ser un número mayor o igual que cero.");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+        }
+
     }
 }

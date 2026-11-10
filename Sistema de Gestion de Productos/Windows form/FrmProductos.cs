@@ -1,5 +1,6 @@
 
 using Sistema_de_Gestion_de_Productos_.Clases;
+using Sistema_de_Gestion_de_Productos_.Windows_form.Funciones_Fronted;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -28,7 +29,7 @@ namespace Sistema_de_Gestion_de_Productos_
             dateTimePicker1.Visible = false;
             label7.Visible = false;
 
-            
+
 
             CargarCategorias();
             CargarProductos();
@@ -319,7 +320,7 @@ namespace Sistema_de_Gestion_de_Productos_
 
         private void label5_Click(object sender, EventArgs e)
         {
-            // Sin acción asignada.
+            
         }
         // Cargar los datos del producto seleccionado.
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -334,6 +335,21 @@ namespace Sistema_de_Gestion_de_Productos_
             txtExistencias.Text = fila.Cells["Existencias"].Value?.ToString();
 
             cmbCategoria.Text = fila.Cells["Categoria"].Value?.ToString();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ErrorProviders.ErrorNombreP(errorProvider1, txtNombre);
+        }
+
+        private void txtPrecioCosto_TextChanged(object sender, EventArgs e)
+        {
+            ErrorProviders.ErrorPrecio(errorProvider2, txtPrecioCosto);
+        }
+
+        private void txtExistencias_TextChanged(object sender, EventArgs e)
+        {
+            ErrorProviders.Stock(errorProvider3, txtExistencias);
         }
     }
 }

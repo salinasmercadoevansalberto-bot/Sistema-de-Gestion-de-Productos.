@@ -1,5 +1,6 @@
 
 using Sistema_de_Gestion_de_Productos_.Clases;
+using Sistema_de_Gestion_de_Productos_.Windows_form.Funciones_Fronted;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -32,7 +33,7 @@ namespace Sistema_de_Gestion_de_Productos_
             dateTimePicker1.Visible = false;
             label7.Visible = false;
 
-            
+
 
             dgvProductos.ReadOnly = true;
             dgvProductos.AllowUserToAddRows = false;
@@ -281,5 +282,21 @@ namespace Sistema_de_Gestion_de_Productos_
         {
             Funcion_de_Regreso_Boton.Regreso(this);
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ErrorProviders.ErrorNombreP(errorProvider1, txtNombre);
+        }
+
+        private void txtPrecioCosto_TextChanged(object sender, EventArgs e)
+        {
+            ErrorProviders.ErrorPrecio(errorProvider2, txtPrecioCosto);
+        }
+
+        private void txtExistencias_TextChanged(object sender, EventArgs e)
+        {
+            ErrorProviders.Stock(errorProvider3, txtExistencias);
+        }
     }
 }
+
